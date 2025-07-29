@@ -1,0 +1,125 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.7">
+  <diagram name="ページ1" id="QTPtTM3dV5fszjK0FNFE">
+    <mxGraphModel dx="1323" dy="809" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-1" value="Youglish" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="60" width="460" height="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-2" value="&amp;nbsp;User" style="swimlane;startSize=20;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-1">
+          <mxGeometry y="20" width="150" height="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-6" value="外部リンクをタップ" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-2">
+          <mxGeometry x="39.999999999999545" y="40" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-2" source="YXp7gPcy2K04L7zPCXfc-18" target="YXp7gPcy2K04L7zPCXfc-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-18" value="メッセージを確認" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-2">
+          <mxGeometry x="14.999999999999545" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-26" value="ページを閉じる" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-2">
+          <mxGeometry x="39.999999999999545" y="370" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-60" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-2" source="YXp7gPcy2K04L7zPCXfc-55" target="YXp7gPcy2K04L7zPCXfc-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-55" value="ページを閲覧・操作" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-2">
+          <mxGeometry x="15" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-57" value="Webviewを閉じるボタンをタップ" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-2">
+          <mxGeometry x="15" y="920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-3" value="App" style="swimlane;startSize=20;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-1">
+          <mxGeometry x="150" y="20" width="170" height="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-3" source="YXp7gPcy2K04L7zPCXfc-7" target="YXp7gPcy2K04L7zPCXfc-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-7" value="選択された単語を取得する" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="24.999999999999545" y="45" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-3" source="YXp7gPcy2K04L7zPCXfc-9" target="YXp7gPcy2K04L7zPCXfc-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-14" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=1;" vertex="1" connectable="0" parent="YXp7gPcy2K04L7zPCXfc-13">
+          <mxGeometry x="-0.2" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-29" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-3" source="YXp7gPcy2K04L7zPCXfc-9" target="YXp7gPcy2K04L7zPCXfc-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-30" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=1;" vertex="1" connectable="0" parent="YXp7gPcy2K04L7zPCXfc-29">
+          <mxGeometry x="0.1407" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-9" value="オンライン接続可能か？" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="44.999999999999545" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-12" value="エラーメッセージを表示" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="24.999999999999545" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-48" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-3" source="YXp7gPcy2K04L7zPCXfc-28" target="YXp7gPcy2K04L7zPCXfc-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-28" value="URLを構築" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="24.999999999999545" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-35" value="リクエストを投げる" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="24.999999999999545" y="640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-53" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-3" source="YXp7gPcy2K04L7zPCXfc-45" target="YXp7gPcy2K04L7zPCXfc-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-45" value="ページをWebviewに表示" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="25" y="730" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-3" source="YXp7gPcy2K04L7zPCXfc-47" target="YXp7gPcy2K04L7zPCXfc-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-47" value="Webviewを表示するページへ遷移" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="25" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-54" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-3" source="YXp7gPcy2K04L7zPCXfc-49" target="YXp7gPcy2K04L7zPCXfc-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-49" value="ローディングインジケータを表示" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="25" y="550" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-52" value="ローディングインジケータを非表示" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="25" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-59" value="Webviewを閉じ詳細画面へ遷移" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-3">
+          <mxGeometry x="50" y="915" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-4" value="Youglish" style="swimlane;startSize=20;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-1">
+          <mxGeometry x="320" y="20" width="140" height="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-34" value="レスポンスを返す" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="YXp7gPcy2K04L7zPCXfc-4">
+          <mxGeometry x="9.999999999999545" y="640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-1" source="YXp7gPcy2K04L7zPCXfc-6" target="YXp7gPcy2K04L7zPCXfc-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-1" source="YXp7gPcy2K04L7zPCXfc-12" target="YXp7gPcy2K04L7zPCXfc-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-1" source="YXp7gPcy2K04L7zPCXfc-35" target="YXp7gPcy2K04L7zPCXfc-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-51" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-1" source="YXp7gPcy2K04L7zPCXfc-34" target="YXp7gPcy2K04L7zPCXfc-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-56" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-1" source="YXp7gPcy2K04L7zPCXfc-52" target="YXp7gPcy2K04L7zPCXfc-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YXp7gPcy2K04L7zPCXfc-61" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="YXp7gPcy2K04L7zPCXfc-1" source="YXp7gPcy2K04L7zPCXfc-57" target="YXp7gPcy2K04L7zPCXfc-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
