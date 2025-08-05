@@ -1,9 +1,107 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.7">
   <diagram name="ページ1" id="wa0YMVmMCyKpqJJfpHC2">
-    <mxGraphModel>
+    <mxGraphModel dx="946" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-1" value="Pool" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="80" width="460" height="840" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-2" value="Lane 1" style="swimlane;startSize=20;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-1">
+          <mxGeometry y="20" width="140" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-6" value="設定画面を開く" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-2">
+          <mxGeometry x="25" y="40" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-2" source="k1AqSvMNCNaD44dI68Pe-19" target="k1AqSvMNCNaD44dI68Pe-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-19" value="画面を確認" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-2">
+          <mxGeometry x="9.999999999999545" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-21" value="任意の設定を変更" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-2">
+          <mxGeometry x="9.999999999999545" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-26" value="保存ボタンをタップ" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-2">
+          <mxGeometry x="9.999999999999545" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-49" value="終了" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-2">
+          <mxGeometry x="35" y="655" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-3" value="Lane 2" style="swimlane;startSize=20;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-1">
+          <mxGeometry x="140" y="20" width="160" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-7" value="DBに現在の設定を問い合わせる" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-3">
+          <mxGeometry x="14.999999999999545" y="45" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-17" value="取得した設定値に基づきUIを構築し画面を表示" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-3">
+          <mxGeometry x="14.999999999999545" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-24" value="設定を更新し画面を再構築" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-3">
+          <mxGeometry x="14.999999999999545" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-37" value="&amp;nbsp;DBへ設定を保存するよう要求" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-3">
+          <mxGeometry x="15" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-46" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-3" source="k1AqSvMNCNaD44dI68Pe-41" target="k1AqSvMNCNaD44dI68Pe-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-48" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-3" source="k1AqSvMNCNaD44dI68Pe-41" target="k1AqSvMNCNaD44dI68Pe-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-41" value="処理が正常に行われたか？" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-3">
+          <mxGeometry x="35" y="470" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-43" value="「設定を変更しました」というメッセージを表示しホーム画面へ遷移" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-3">
+          <mxGeometry x="15" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-47" value="エラーメッセージを表示しホーム画面へ遷移" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-3">
+          <mxGeometry x="15" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-6" target="k1AqSvMNCNaD44dI68Pe-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-7" target="k1AqSvMNCNaD44dI68Pe-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-18" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-15" target="k1AqSvMNCNaD44dI68Pe-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-17" target="k1AqSvMNCNaD44dI68Pe-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-23" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="154.99999999999955" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-36" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-24" target="k1AqSvMNCNaD44dI68Pe-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-38" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-26" target="k1AqSvMNCNaD44dI68Pe-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-4" value="Lane 3" style="swimlane;startSize=20;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-1">
+          <mxGeometry x="300" y="20" width="160" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-15" value="現在の設定を取得し返す" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-4">
+          <mxGeometry x="19.999999999999545" y="45" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-39" value="DBへ設定を保存" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="k1AqSvMNCNaD44dI68Pe-4">
+          <mxGeometry x="20" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-37" target="k1AqSvMNCNaD44dI68Pe-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-45" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-39" target="k1AqSvMNCNaD44dI68Pe-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-47" target="k1AqSvMNCNaD44dI68Pe-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k1AqSvMNCNaD44dI68Pe-51" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="k1AqSvMNCNaD44dI68Pe-1" source="k1AqSvMNCNaD44dI68Pe-43" target="k1AqSvMNCNaD44dI68Pe-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
