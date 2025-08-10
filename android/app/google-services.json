@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1061483004772",
+    "project_id": "ezvocab-392d4",
+    "storage_bucket": "ezvocab-392d4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061483004772:android:c11bb37fdef816291bb071",
+        "android_client_info": {
+          "package_name": "com.example.ezvocab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA91TeJ2Z2jglGR1I1nkDWMbxxNS53Yixo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
