@@ -17,17 +17,26 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -39,24 +48,6 @@ class DefaultFirebaseOptions {
         );
     }
   }
-
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDce5VCAulP4EjhA4PxNkkHyttdH1K1eOg',
-    appId: '1:1061483004772:web:7313a684d7e35d621bb071',
-    messagingSenderId: '1061483004772',
-    projectId: 'ezvocab-392d4',
-    authDomain: 'ezvocab-392d4.firebaseapp.com',
-    storageBucket: 'ezvocab-392d4.firebasestorage.app',
-    measurementId: 'G-E0T381CRF6',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA91TeJ2Z2jglGR1I1nkDWMbxxNS53Yixo',
-    appId: '1:1061483004772:android:c11bb37fdef816291bb071',
-    messagingSenderId: '1061483004772',
-    projectId: 'ezvocab-392d4',
-    storageBucket: 'ezvocab-392d4.firebasestorage.app',
-  );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyACIDMmMNFq9JlHtJqSmSoarJ6ymZ9zT3k',
@@ -74,15 +65,5 @@ class DefaultFirebaseOptions {
     projectId: 'ezvocab-392d4',
     storageBucket: 'ezvocab-392d4.firebasestorage.app',
     iosBundleId: 'com.example.ezvocab',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDce5VCAulP4EjhA4PxNkkHyttdH1K1eOg',
-    appId: '1:1061483004772:web:c09a8e637be8274f1bb071',
-    messagingSenderId: '1061483004772',
-    projectId: 'ezvocab-392d4',
-    authDomain: 'ezvocab-392d4.firebaseapp.com',
-    storageBucket: 'ezvocab-392d4.firebasestorage.app',
-    measurementId: 'G-NNTPZTL6KF',
   );
 }
