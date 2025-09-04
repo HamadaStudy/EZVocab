@@ -36,10 +36,6 @@ class AuthViewModel extends _$AuthViewModel {
       state = const AsyncValue.data(null);
     } on FirebaseAuthException catch (e, stackTrace) {
       state = AsyncValue.error(e, stackTrace);
-      // print('Error code: ${e.code}');
-      // print('Error message: ${e.message}');
-      // print('Error details: ${e.toString()}');
-      // print("nandeyanen");
     }
   }
 
@@ -50,10 +46,6 @@ class AuthViewModel extends _$AuthViewModel {
       state = const AsyncValue.data(null);
     } on FirebaseAuthException catch (e, stackTrace) {
       state = AsyncValue.error(e, stackTrace);
-      // print('Error code: ${e.code}');
-      // print('Error message: ${e.message}');
-      // print('Error details: ${e.toString()}');
-      // print("nandeyanen");
     }
   }
 }
