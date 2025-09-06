@@ -49,7 +49,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
               TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(
-                  labelText: 'メールアドレス',
+                  labelText: 'Mail Address',
                   // border: OutlineInputBorder(),
                 ),
                 // keyboardType: TextInputType.emailAddress,
@@ -58,10 +58,10 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
               TextFormField(
                 controller: _passwordController,
                 decoration: const InputDecoration(
-                  labelText: 'パスワード',
+                  labelText: 'Password',
                   // border: OutlineInputBorder(),
                 ),
-                // obscureText: true,
+                obscureText: true,
               ),
               const SizedBox(height: 24),
               Container(
@@ -86,7 +86,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                         },
                   child: state.isLoading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text('サインアップ'),
+                      : const Text('Sign Up'),
                 ),
               ),
             ],
