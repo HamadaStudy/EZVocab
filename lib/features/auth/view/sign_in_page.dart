@@ -49,19 +49,19 @@ class _SignInPageState extends ConsumerState<SignInPage> {
               TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(
-                  labelText: 'メールアドレス',
+                  labelText: 'Mail Address',
                   // border: OutlineInputBorder(),
                 ),
-                // keyboardType: TextInputType.emailAddress,
+                keyboardType: TextInputType.emailAddress,
               ),
               // パスワード入力
               TextFormField(
                 controller: _passwordController,
                 decoration: const InputDecoration(
-                  labelText: 'パスワード',
+                  labelText: 'Password',
                   // border: OutlineInputBorder(),
                 ),
-                // obscureText: true,
+                obscureText: true,
               ),
               const SizedBox(height: 24),
               Container(
@@ -86,7 +86,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                         },
                   child: state.isLoading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text('サインイン'),
+                      : const Text('Sign In'),
                 ),
               ),
             ],
