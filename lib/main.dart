@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '/config/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-import '/app/router/app_router.dart';
+import 'router/app_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {

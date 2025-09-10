@@ -1,4 +1,4 @@
-import 'package:ezvocab/features/auth/providers/auth_provider.dart';
+import 'package:ezvocab/providers/auth_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../repository/auth_repository.dart';
@@ -22,10 +22,6 @@ class AuthViewModel extends _$AuthViewModel {
       state = const AsyncValue.data(null);
     } on FirebaseAuthException catch (e, stackTrace) {
       state = AsyncValue.error(e, stackTrace);
-      // print('Error code: ${e.code}');
-      // print('Error message: ${e.message}');
-      // print('Error details: ${e.toString()}');
-      // print("nandeyanen");
     }
   }
 
