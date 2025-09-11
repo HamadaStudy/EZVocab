@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../view_model/auth_view_model.dart';
-import 'package:go_router/go_router.dart';
 import 'app_bottom_navigation_bar.dart';
 
 class MaterialRegistrationPage extends ConsumerStatefulWidget {
@@ -51,7 +49,7 @@ class _MaterialRegistrationState
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('登録'),
+        title: Text(widget.title),
         centerTitle: true,
         actions: [
           IconButton(icon: Icon(Icons.copy), onPressed: () {}),

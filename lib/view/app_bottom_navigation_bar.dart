@@ -4,7 +4,7 @@ import '../view_model/auth_view_model.dart';
 import 'package:go_router/go_router.dart';
 import '../router/app_router.dart';
 
-class AppBottomNavigationBar extends ConsumerStatefulWidget{
+class AppBottomNavigationBar extends ConsumerStatefulWidget {
   const AppBottomNavigationBar({super.key});
 
   @override
@@ -16,29 +16,37 @@ class _NavigationState extends ConsumerState<AppBottomNavigationBar> {
   void dispose() {
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     final router = ref.watch(routerProvider);
     final state = router.routerDelegate.currentConfiguration.uri;
     return BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            IconButton(onPressed: () {
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          IconButton(
+            onPressed: () {
               context.go('/home');
-            }, icon: Icon(Icons.home)),
-            IconButton(
-              onPressed: () {
-                context.go('/material_registration');
-              },
-              icon: Icon(Icons.add_box),
-            ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.library_books)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.chat_bubble_outline)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.fitness_center)),
-          ],
-        ),
-      );
+            },
+            icon: Icon(Icons.home),
+          ),
+          IconButton(
+            onPressed: () {
+              context.go('/material_registration');
+            },
+            icon: Icon(Icons.add_box),
+          ),
+          IconButton(
+            onPressed: () {
+              context.go('/vocabulary_list');
+            },
+            icon: Icon(Icons.library_books),
+          ),
+          IconButton(onPressed: () {}, icon: Icon(Icons.chat_bubble_outline)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.fitness_center)),
+        ],
+      ),
+    );
   }
 }

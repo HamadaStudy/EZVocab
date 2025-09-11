@@ -1,0 +1,95 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'app_bottom_navigation_bar.dart';
+
+class VocabularyListPage extends ConsumerStatefulWidget {
+  const VocabularyListPage({super.key, required this.title});
+  final String title;
+
+  @override
+  ConsumerState<VocabularyListPage> createState() => _VocabularyListPageState();
+}
+
+class _VocabularyListPageState extends ConsumerState<VocabularyListPage> {
+  // フィルターボタンの選択状態を管理
+  final List<bool> _isFilterSelected = [true, false, false];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            // 検索バー
+            const TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.search),
+                hintText: '検索',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(25.0)),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            // フィルターボタン
+            ToggleButtons(
+              isSelected: _isFilterSelected,
+              onPressed: (int index) {
+                setState(() {
+                  for (int i = 0; i < _isFilterSelected.length; i++) {
+                    _isFilterSelected[i] = (i == index);
+                  }
+                });
+              },
+              borderRadius: BorderRadius.circular(8.0),
+              selectedColor: Colors.white,
+              color: Colors.black,
+              fillColor: Colors.deepPurple[200],
+              splashColor: Colors.deepPurple[100],
+              children: const <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text('未習得'),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text('単語'),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text('idiom'),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            // 語彙リスト
+            Expanded(
+              child: ListView.builder(
+                itemCount: 10, // 実際のデータ数に合わせる
+                itemBuilder: (context, index) {
+                  return Card(
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: ListTile(
+                      title: const Text(
+                        'translate [発音]',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: const Text('(動)翻訳する'),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: AppBottomNavigationBar(),
+    );
+  }
+}

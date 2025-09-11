@@ -8,6 +8,7 @@ import '../view/entry_page.dart';
 import '../view/sign_up_page.dart';
 import '../view/settings_page.dart';
 import '../view/material_registration_page.dart';
+import '../view/vocaburaly_list_page.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final authState = ref.watch(authStateChangesProvider);
@@ -56,6 +57,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/material_registration',
         builder: (context, state) =>
             const MaterialRegistrationPage(title: 'Registration'),
+      ),
+      GoRoute(
+        path: '/vocabulary_list',
+        builder: (context, state) =>
+            const VocabularyListPage(title: 'Vocabulary'),
       ),
     ],
   );
