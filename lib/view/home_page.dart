@@ -42,12 +42,6 @@ class _HomePageState extends ConsumerState<HomePage> {
               context.push('/settings');
             },
           ),
-          IconButton(
-            onPressed: () {
-              context.push('/sample');
-            },
-            icon: Icon(Icons.star_outlined),
-          ),
         ],
       ),
       body: SingleChildScrollView(

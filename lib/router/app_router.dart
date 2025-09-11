@@ -1,3 +1,4 @@
+import 'package:ezvocab/view/test_settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,6 +10,7 @@ import '../view/sign_up_page.dart';
 import '../view/settings_page.dart';
 import '../view/material_registration_page.dart';
 import '../view/vocaburaly_list_page.dart';
+import '../view/phrase_list_page.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final authState = ref.watch(authStateChangesProvider);
@@ -62,6 +64,15 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/vocabulary_list',
         builder: (context, state) =>
             const VocabularyListPage(title: 'Vocabulary'),
+      ),
+      GoRoute(
+        path: '/phrase_list',
+        builder: (context, state) => const PhraseListPage(title: 'Phrase'),
+      ),
+      GoRoute(
+        path: '/test_settings',
+        builder: (context, state) =>
+            const TestSettingsPage(title: 'Test Settings'),
       ),
     ],
   );

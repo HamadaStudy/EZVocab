@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app_bottom_navigation_bar.dart';
 
-class VocabularyListPage extends ConsumerStatefulWidget {
-  const VocabularyListPage({super.key, required this.title});
+class PhraseListPage extends ConsumerStatefulWidget {
+  const PhraseListPage({super.key, required this.title});
   final String title;
 
   @override
-  ConsumerState<VocabularyListPage> createState() => _VocabularyListPageState();
+  ConsumerState<PhraseListPage> createState() => _PhraseListPageState();
 }
 
-class _VocabularyListPageState extends ConsumerState<VocabularyListPage> {
+class _PhraseListPageState extends ConsumerState<PhraseListPage> {
   // フィルターボタンの選択状態を管理
-  final List<bool> _isFilterSelected = [true, false, false];
+  final List<bool> _isFilterSelected = [false];
 
   @override
   Widget build(BuildContext context) {
@@ -55,14 +55,6 @@ class _VocabularyListPageState extends ConsumerState<VocabularyListPage> {
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text('未習得'),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Text('単語'),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Text('idiom'),
-                ),
               ],
             ),
             const SizedBox(height: 16),
@@ -75,10 +67,10 @@ class _VocabularyListPageState extends ConsumerState<VocabularyListPage> {
                     margin: const EdgeInsets.symmetric(vertical: 8.0),
                     child: ListTile(
                       title: const Text(
-                        'translate [発音]',
+                        'in front of [発音]',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      subtitle: const Text('(動)翻訳する'),
+                      subtitle: const Text('〜の前に'),
                     ),
                   );
                 },

@@ -43,8 +43,18 @@ class _NavigationState extends ConsumerState<AppBottomNavigationBar> {
             },
             icon: Icon(Icons.library_books),
           ),
-          IconButton(onPressed: () {}, icon: Icon(Icons.chat_bubble_outline)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.fitness_center)),
+          IconButton(
+            onPressed: () {
+              context.go('/phrase_list');
+            },
+            icon: Icon(Icons.chat_bubble_outline),
+          ),
+          IconButton(
+            onPressed: () {
+              context.go('/test_settings');
+            },
+            icon: Icon(Icons.fitness_center),
+          ),
         ],
       ),
     );
