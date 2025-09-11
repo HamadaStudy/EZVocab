@@ -128,11 +128,11 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-50" value="" style="fillColor=#36B37E;strokeColor=none;rounded=1;arcSize=50;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="739" y="217" width="30" height="16" as="geometry" />
+          <mxGeometry x="739" y="288" width="30" height="16" as="geometry" />
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-51" value="" style="shape=ellipse;strokeColor=none;fillColor=#ffffff;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="C_bWI6odMbXhe59eFl2r-50" vertex="1">
           <mxGeometry x="1" y="0.5" width="12" height="12" relative="1" as="geometry">
-            <mxPoint x="-14" y="-6" as="offset" />
+            <mxPoint x="-14" y="-5" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-52" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.check;strokeColor=#ffffff;sketch=1;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="C_bWI6odMbXhe59eFl2r-50" vertex="1">
@@ -141,17 +141,17 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-53" value="自動ダウンロード" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="620" y="210" width="100" height="30" as="geometry" />
+          <mxGeometry x="624" y="281" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-54" value="通知" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="620" y="167" width="60" height="30" as="geometry" />
+          <mxGeometry x="609" y="254" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-56" value="" style="fillColor=#36B37E;strokeColor=none;rounded=1;arcSize=50;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="739" y="174" width="30" height="16" as="geometry" />
+          <mxGeometry x="739" y="260" width="30" height="16" as="geometry" />
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-57" value="" style="shape=ellipse;strokeColor=none;fillColor=#ffffff;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="C_bWI6odMbXhe59eFl2r-56" vertex="1">
           <mxGeometry x="1" y="0.5" width="12" height="12" relative="1" as="geometry">
-            <mxPoint x="-14" y="-6" as="offset" />
+            <mxPoint x="-14" y="-5" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-58" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.atlassian.check;strokeColor=#ffffff;sketch=1;hachureGap=4;pointerEvents=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="C_bWI6odMbXhe59eFl2r-56" vertex="1">
@@ -160,10 +160,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-60" value="&amp;nbsp;UIテーマ設定" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="620" y="260" width="80" height="30" as="geometry" />
+          <mxGeometry x="620" y="310" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-61" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/Evil_Icons_User_Interface-2617/arrow_right2-584.svg" parent="1" vertex="1">
-          <mxGeometry x="736.5" y="257.5" width="35" height="35" as="geometry" />
+          <mxGeometry x="736.5" y="307.5" width="35" height="35" as="geometry" />
         </mxCell>
         <mxCell id="C_bWI6odMbXhe59eFl2r-64" value="本日の学習記録&lt;br&gt;TOEICまで残りxx日&lt;br&gt;学習時間合計xx時間&lt;br&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;詳細&lt;/font&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="370" y="510" width="140" height="70" as="geometry" />
