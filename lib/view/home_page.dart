@@ -33,6 +33,7 @@ class _HomePageState extends ConsumerState<HomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.settings),
@@ -40,6 +41,12 @@ class _HomePageState extends ConsumerState<HomePage> {
             onPressed: () {
               context.push('/settings');
             },
+          ),
+          IconButton(
+            onPressed: () {
+              context.push('/sample');
+            },
+            icon: Icon(Icons.star_outlined),
           ),
         ],
       ),

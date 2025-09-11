@@ -25,10 +25,11 @@ class _NavigationState extends ConsumerState<AppBottomNavigationBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            IconButton(onPressed: () {}, icon: Icon(Icons.home)),
+            IconButton(onPressed: () {
+              context.go('/home');
+            }, icon: Icon(Icons.home)),
             IconButton(
               onPressed: () {
-                print(state);
                 context.go('/material_registration');
               },
               icon: Icon(Icons.add_box),

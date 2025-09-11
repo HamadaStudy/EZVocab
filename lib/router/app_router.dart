@@ -52,7 +52,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/settings',
         builder: (context, state) => const SettingsPage(title: 'settings'),
       ),
-      GoRoute(path: '/material_registration', builder: (context, state) => const MaterialRegistrationPage(title: 'Registration'),)
+      GoRoute(
+        path: '/material_registration',
+        builder: (context, state) =>
+            const MaterialRegistrationPage(title: 'Registration'),
+      ),
     ],
   );
 });
