@@ -1,3 +1,4 @@
+import 'package:ezvocab/view/app_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../view_model/auth_view_model.dart';
@@ -165,23 +166,7 @@ class _HomePageState extends ConsumerState<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-            IconButton(
-              onPressed: () {
-                context.go('/material_registration');
-              },
-              icon: Icon(Icons.add_box),
-            ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.library_books)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.chat_bubble_outline)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.fitness_center)),
-          ],
-        ),
-      ),
+      bottomNavigationBar: AppBottomNavigationBar()
     );
   }
 }
