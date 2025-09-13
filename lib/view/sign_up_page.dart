@@ -24,8 +24,9 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = ref.watch(authViewModelProvider.notifier);
     final state = ref.watch(authViewModelProvider);
+    final viewModel = ref.watch(authViewModelProvider.notifier);
+
     ref.listen(authViewModelProvider, (previousState, newState) {
       if (newState.hasError) {
         ScaffoldMessenger.of(

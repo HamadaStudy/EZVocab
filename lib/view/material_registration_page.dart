@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app_bottom_navigation_bar.dart';
+import '../view_model/material_registration_view_model.dart';
 
 class MaterialRegistrationPage extends ConsumerStatefulWidget {
   const MaterialRegistrationPage({super.key, required this.title});
@@ -23,16 +24,6 @@ class _MaterialRegistrationState
   final _exampleController = TextEditingController();
   final _contextController = TextEditingController();
 
-  // 登録ボタンが押されたときの処理
-  void _onRegister() {
-    // ここに登録処理を実装します
-    // 例:
-    // final word = _wordController.text;
-    // final pronunciation = _pronunciationController.text;
-    // ...など
-    print('登録ボタンが押されました');
-  }
-
   @override
   void dispose() {
     // コントローラーを破棄してメモリリークを防ぎます
@@ -46,6 +37,8 @@ class _MaterialRegistrationState
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = ref.watch(materialRegistrationViewModelProvider.notifier);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -101,7 +94,10 @@ class _MaterialRegistrationState
             buildLabeledTextField('文脈', _contextController),
             const SizedBox(height: 32),
             ElevatedButton(
-              onPressed: _onRegister,
+              onPressed: () {
+                viewModel.registerMaterial();
+                print('登録!');
+              },
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.purple.shade200,

@@ -12,8 +12,8 @@ class Vocabulary {
   String? pos;
   String? pronunciation;
   String? audioPath;
-  String? exmaple;
-  String? exmapleAudioPath;
+  String? example;
+  String? exampleAudioPath;
   String? contextTag;
   DateTime createdAt;
   DateTime? lastStudiedAt;
@@ -27,8 +27,8 @@ class Vocabulary {
     this.pos,
     this.pronunciation,
     this.audioPath,
-    this.exmaple,
-    this.exmapleAudioPath,
+    this.example,
+    this.exampleAudioPath,
     this.contextTag,
     required this.createdAt,
     this.lastStudiedAt,
