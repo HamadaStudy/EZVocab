@@ -7,12 +7,12 @@ part of 'material_registration_view_model.dart';
 // **************************************************************************
 
 String _$materialRegistrationViewModelHash() =>
-    r'50444d121114c19cbeeceed00a9e4c384becce8d';
+    r'3a12acaef89f1258f4883a9949834da05cd1e4f6';
 
 /// See also [MaterialRegistrationViewModel].
 @ProviderFor(MaterialRegistrationViewModel)
-final materialRegistrationViewModelProvider = AutoDisposeAsyncNotifierProvider<
-    MaterialRegistrationViewModel, void>.internal(
+final materialRegistrationViewModelProvider = AutoDisposeNotifierProvider<
+    MaterialRegistrationViewModel, RegistrationFormData>.internal(
   MaterialRegistrationViewModel.new,
   name: r'materialRegistrationViewModelProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,6 +22,7 @@ final materialRegistrationViewModelProvider = AutoDisposeAsyncNotifierProvider<
   allTransitiveDependencies: null,
 );
 
-typedef _$MaterialRegistrationViewModel = AutoDisposeAsyncNotifier<void>;
+typedef _$MaterialRegistrationViewModel
+    = AutoDisposeNotifier<RegistrationFormData>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

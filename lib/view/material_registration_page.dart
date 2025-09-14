@@ -16,16 +16,17 @@ class MaterialRegistrationPage extends ConsumerStatefulWidget {
 class _MaterialRegistrationState
     extends ConsumerState<MaterialRegistrationPage> {
   // ToggleButtonsの選択状態を管理するリスト
-  List<bool> isSelectedType = [true, false];
-  List<String> typeList = ['word', 'idiom'];
+  // List<bool> isSelectedType = [true, false];
+  // List<String> typeList = ['word', 'idiom'];
 
-  String type = 'word';
-  String name = '';
-  String? pronunciation;
-  String meaning = '';
-  String? pos;
-  String? example;
-  String? situation;
+  // String type = 'word';
+  // String name = '';
+  // String? pronunciation;
+  // String? meaning;
+  // String? pos;
+  // String? example;
+  // String? situation;
+  // bool isRegistrationEnabled = false;
 
   // テキストフィールドのコントローラー
   final _nameController = TextEditingController();
@@ -46,8 +47,32 @@ class _MaterialRegistrationState
   ];
 
   @override
+  void initState() {
+    super.initState();
+    final viewModelNotifier = ref.read(
+      materialRegistrationViewModelProvider.notifier,
+    );
+    _nameController.addListener(() {
+      viewModelNotifier.updateName(_nameController.text);
+    });
+    _meaningController.addListener(() {
+      viewModelNotifier.updateMeaning(_meaningController.text);
+    });
+    _pronunciationController.addListener(() {
+      viewModelNotifier.updatePronunciation(_pronunciationController.text);
+    });
+    _exampleController.addListener(() {
+      viewModelNotifier.updateExample(_exampleController.text);
+    });
+    _situationController.addListener(() {
+      viewModelNotifier.updateSituation(_situationController.text);
+    });
+  }
+
+  @override
   void dispose() {
     // コントローラーを破棄してメモリリークを防ぎます
+    // _nameController.removeListener();
     _nameController.dispose();
     _pronunciationController.dispose();
     _meaningController.dispose();
@@ -56,9 +81,21 @@ class _MaterialRegistrationState
     super.dispose();
   }
 
+  // void _updateButtonState() {
+  //   final isNameFilled = _nameController.text.isNotEmpty;
+  //   if (isRegistrationEnabled != isNameFilled) {
+  //     setState(() {
+  //       isRegistrationEnabled = isNameFilled;
+  //     });
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
-    final viewModel = ref.watch(materialRegistrationViewModelProvider.notifier);
+    final viewModelProvider = ref.watch(materialRegistrationViewModelProvider);
+    final viewModelNotifier = ref.watch(
+      materialRegistrationViewModelProvider.notifier,
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -77,15 +114,15 @@ class _MaterialRegistrationState
           children: [
             Center(
               child: ToggleButtons(
-                isSelected: isSelectedType,
-                onPressed: (index) {
-                  setState(() {
-                    for (int i = 0; i < isSelectedType.length; i++) {
-                      isSelectedType[i] = i == index;
-                    }
-                    type = typeList[index];
-                  });
+                isSelected: viewModelProvider.selectedTypeFlags,
+                onPressed: (int index) {
+                  viewModelNotifier.updateSelectedType(index);
                 },
+                borderRadius: BorderRadius.circular(8.0),
+                selectedColor: Colors.white,
+                color: Colors.black,
+                fillColor: Colors.deepPurple[200],
+                splashColor: Colors.deepPurple[100],
                 children: const [
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -105,19 +142,17 @@ class _MaterialRegistrationState
               ),
             ),
             const SizedBox(height: 24),
-            buildLabeledTextField('単語', _nameController),
+            buildLabeledTextField('単語 *', _nameController),
             const SizedBox(height: 16),
             buildLabeledTextField('発音記号', _pronunciationController),
             const SizedBox(height: 16),
             buildLabeledTextField('意味', _meaningController),
             const SizedBox(height: 16),
             DropdownButton(
-              value: pos,
+              value: viewModelProvider.selectedPos,
               items: _posDropdownItems,
               onChanged: (String? value) {
-                setState(() {
-                  pos = value;
-                });
+                viewModelNotifier.updateSelectedPos(value);
               },
               hint: const Text('品詞を選択してください'),
             ),
@@ -127,28 +162,14 @@ class _MaterialRegistrationState
             buildLabeledTextField('文脈', _situationController),
             const SizedBox(height: 32),
             ElevatedButton(
-              onPressed: () {
-                name = _nameController.text;
-                pronunciation = _pronunciationController.text;
-                meaning = _meaningController.text;
-                example = _exampleController.text;
-                situation = _situationController.text;
-                Vocabulary vocabulary = Vocabulary(
-                  name: name,
-                  type: type,
-                  meaning: meaning,
-                  createdAt: DateTime.now(),
-                  pos: pos,
-                  pronunciation: pronunciation,
-                  example: example,
-                  situation: situation,
-                );
-                viewModel.registerMaterial(vocabulary);
-                print('登録!');
-              },
+              onPressed: viewModelNotifier.canRegister()
+                  ? viewModelNotifier.registerMaterial
+                  : null,
               style: ElevatedButton.styleFrom(
                 foregroundColor: const Color.fromARGB(255, 15, 15, 15),
-                backgroundColor: Colors.purple.shade200,
+                backgroundColor: viewModelNotifier.canRegister()
+                    ? Colors.purple.shade200
+                    : Colors.grey,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

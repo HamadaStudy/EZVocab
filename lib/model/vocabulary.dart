@@ -8,7 +8,7 @@ class Vocabulary {
 
   String name;
   String type;
-  String meaning;
+  String? meaning;
   String? pos;
   String? pronunciation;
   String? audioPath;

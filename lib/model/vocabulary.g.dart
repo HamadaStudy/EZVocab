@@ -121,7 +121,12 @@ int _vocabularyEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.meaning.length * 3;
+  {
+    final value = object.meaning;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   bytesCount += 3 + object.name.length * 3;
   {
     final value = object.pos;
@@ -178,7 +183,7 @@ Vocabulary _vocabularyDeserialize(
     example: reader.readStringOrNull(offsets[2]),
     exampleAudioPath: reader.readStringOrNull(offsets[3]),
     lastStudiedAt: reader.readDateTimeOrNull(offsets[4]),
-    meaning: reader.readString(offsets[5]),
+    meaning: reader.readStringOrNull(offsets[5]),
     name: reader.readString(offsets[6]),
     nextReview: reader.readDateTimeOrNull(offsets[7]),
     pos: reader.readStringOrNull(offsets[8]),
@@ -209,7 +214,7 @@ P _vocabularyDeserializeProp<P>(
     case 4:
       return (reader.readDateTimeOrNull(offset)) as P;
     case 5:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 6:
       return (reader.readString(offset)) as P;
     case 7:
@@ -956,8 +961,25 @@ extension VocabularyQueryFilter
     });
   }
 
+  QueryBuilder<Vocabulary, Vocabulary, QAfterFilterCondition> meaningIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'meaning',
+      ));
+    });
+  }
+
+  QueryBuilder<Vocabulary, Vocabulary, QAfterFilterCondition>
+      meaningIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'meaning',
+      ));
+    });
+  }
+
   QueryBuilder<Vocabulary, Vocabulary, QAfterFilterCondition> meaningEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -971,7 +993,7 @@ extension VocabularyQueryFilter
 
   QueryBuilder<Vocabulary, Vocabulary, QAfterFilterCondition>
       meaningGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -986,7 +1008,7 @@ extension VocabularyQueryFilter
   }
 
   QueryBuilder<Vocabulary, Vocabulary, QAfterFilterCondition> meaningLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -1001,8 +1023,8 @@ extension VocabularyQueryFilter
   }
 
   QueryBuilder<Vocabulary, Vocabulary, QAfterFilterCondition> meaningBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -2400,7 +2422,7 @@ extension VocabularyQueryProperty
     });
   }
 
-  QueryBuilder<Vocabulary, String, QQueryOperations> meaningProperty() {
+  QueryBuilder<Vocabulary, String?, QQueryOperations> meaningProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'meaning');
     });
