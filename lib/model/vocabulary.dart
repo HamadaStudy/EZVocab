@@ -14,7 +14,7 @@ class Vocabulary {
   String? audioPath;
   String? example;
   String? exampleAudioPath;
-  String? contextTag;
+  String? situation;
   DateTime createdAt;
   DateTime? lastStudiedAt;
   int proficiency;
@@ -29,7 +29,7 @@ class Vocabulary {
     this.audioPath,
     this.example,
     this.exampleAudioPath,
-    this.contextTag,
+    this.situation,
     required this.createdAt,
     this.lastStudiedAt,
     this.nextReview,
