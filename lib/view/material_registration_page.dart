@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app_bottom_navigation_bar.dart';
+import '../view_model/material_registration_view_model.dart';
+import '../providers/message_provider.dart';
 
 class MaterialRegistrationPage extends ConsumerStatefulWidget {
   const MaterialRegistrationPage({super.key, required this.title});
@@ -13,39 +15,78 @@ class MaterialRegistrationPage extends ConsumerStatefulWidget {
 
 class _MaterialRegistrationState
     extends ConsumerState<MaterialRegistrationPage> {
-  // ToggleButtonsの選択状態を管理するリスト
-  List<bool> isSelected = [true, false];
-
-  // テキストフィールドのコントローラー
-  final _wordController = TextEditingController();
+  final _nameController = TextEditingController();
   final _pronunciationController = TextEditingController();
   final _meaningController = TextEditingController();
   final _exampleController = TextEditingController();
-  final _contextController = TextEditingController();
+  final _situationController = TextEditingController();
 
-  // 登録ボタンが押されたときの処理
-  void _onRegister() {
-    // ここに登録処理を実装します
-    // 例:
-    // final word = _wordController.text;
-    // final pronunciation = _pronunciationController.text;
-    // ...など
-    print('登録ボタンが押されました');
+  final List<DropdownMenuItem<String>> _posDropdownItems = const [
+    DropdownMenuItem(value: 'noun', child: Text('名詞')),
+    DropdownMenuItem(value: 'pronoun', child: Text('代名詞')),
+    DropdownMenuItem(value: 'verb', child: Text('動詞')),
+    DropdownMenuItem(value: 'adjective', child: Text('形容詞')),
+    DropdownMenuItem(value: 'adverb', child: Text('副詞')),
+    DropdownMenuItem(value: 'preposition', child: Text('前置詞')),
+    DropdownMenuItem(value: 'conjunction', child: Text('接続詞')),
+    DropdownMenuItem(value: 'interjection', child: Text('間投詞')),
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    final viewModelNotifier = ref.read(
+      materialRegistrationViewModelProvider.notifier,
+    );
+    _nameController.addListener(() {
+      viewModelNotifier.updateName(_nameController.text);
+    });
+    _meaningController.addListener(() {
+      viewModelNotifier.updateMeaning(_meaningController.text);
+    });
+    _pronunciationController.addListener(() {
+      viewModelNotifier.updatePronunciation(_pronunciationController.text);
+    });
+    _exampleController.addListener(() {
+      viewModelNotifier.updateExample(_exampleController.text);
+    });
+    _situationController.addListener(() {
+      viewModelNotifier.updateSituation(_situationController.text);
+    });
   }
 
   @override
   void dispose() {
-    // コントローラーを破棄してメモリリークを防ぎます
-    _wordController.dispose();
+    _nameController.dispose();
     _pronunciationController.dispose();
     _meaningController.dispose();
     _exampleController.dispose();
-    _contextController.dispose();
+    _situationController.dispose();
     super.dispose();
+  }
+
+  void clearControllers() {
+    _nameController.clear();
+    _meaningController.clear();
+    _pronunciationController.clear();
+    _exampleController.clear();
+    _situationController.clear();
   }
 
   @override
   Widget build(BuildContext context) {
+    final viewModelProvider = ref.watch(materialRegistrationViewModelProvider);
+    final viewModelNotifier = ref.watch(
+      materialRegistrationViewModelProvider.notifier,
+    );
+    ref.listen<String?>(messageProvider, (previousMessage, nextMessage) {
+      if (nextMessage != null) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(nextMessage)));
+      }
+    });
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -63,14 +104,15 @@ class _MaterialRegistrationState
           children: [
             Center(
               child: ToggleButtons(
-                isSelected: isSelected,
+                isSelected: viewModelProvider.value!.selectedTypeFlags,
                 onPressed: (index) {
-                  setState(() {
-                    for (int i = 0; i < isSelected.length; i++) {
-                      isSelected[i] = i == index;
-                    }
-                  });
+                  viewModelNotifier.updateSelectedType(index);
                 },
+                borderRadius: BorderRadius.circular(8.0),
+                selectedColor: Colors.white,
+                color: Colors.black,
+                fillColor: Colors.deepPurple[200],
+                splashColor: Colors.deepPurple[100],
                 children: const [
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -90,27 +132,60 @@ class _MaterialRegistrationState
               ),
             ),
             const SizedBox(height: 24),
-            buildLabeledTextField('単語', _wordController),
+            buildLabeledTextField('単語 *', _nameController),
             const SizedBox(height: 16),
             buildLabeledTextField('発音記号', _pronunciationController),
             const SizedBox(height: 16),
             buildLabeledTextField('意味', _meaningController),
             const SizedBox(height: 16),
+            DropdownButton(
+              value: viewModelProvider.value!.selectedPos,
+              items: _posDropdownItems,
+              onChanged: (String? value) {
+                viewModelNotifier.updateSelectedPos(value);
+              },
+              hint: const Text('品詞を選択してください'),
+            ),
+            const SizedBox(height: 16),
             buildLabeledTextField('例文', _exampleController),
             const SizedBox(height: 16),
-            buildLabeledTextField('文脈', _contextController),
+            buildLabeledTextField('文脈', _situationController),
             const SizedBox(height: 32),
             ElevatedButton(
-              onPressed: _onRegister,
+              onPressed:
+                  !viewModelNotifier.canRegister() ||
+                      viewModelProvider.isLoading
+                  ? null
+                  : () async {
+                      final isSuccess = await viewModelNotifier
+                          .registerMaterial();
+                      if (isSuccess) {
+                        clearControllers();
+                      }
+                    },
               style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.purple.shade200,
+                foregroundColor: const Color.fromARGB(255, 15, 15, 15),
+                backgroundColor: viewModelProvider.isLoading
+                    ? Colors.purple.shade50
+                    : viewModelNotifier.canRegister()
+                    ? Colors.purple.shade200
+                    : Colors.grey,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: const Text('登録', style: TextStyle(fontSize: 18)),
+              child: viewModelProvider.isLoading
+                  ? const SizedBox(
+                      // ローディングアイコンを表示
+                      width: 24,
+                      height: 24,
+                      child: CircularProgressIndicator(
+                        color: Color.fromARGB(255, 15, 15, 15),
+                        strokeWidth: 3,
+                      ),
+                    )
+                  : const Text('登録', style: TextStyle(fontSize: 18)),
             ),
           ],
         ),
