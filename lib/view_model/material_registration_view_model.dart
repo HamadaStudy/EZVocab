@@ -1,5 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../providers/isar_provider.dart';
+import '../providers/message_provider.dart';
 import '../model/vocabulary.dart';
 
 part 'material_registration_view_model.g.dart';
@@ -69,61 +70,91 @@ class RegistrationFormData {
 @riverpod
 class MaterialRegistrationViewModel extends _$MaterialRegistrationViewModel {
   @override
-  RegistrationFormData build() {
+  Future<RegistrationFormData> build() async {
     final types = ['vocabulary', 'phrase'];
-    return RegistrationFormData(
+    final initialData = RegistrationFormData(
       name: '',
       selectedType: types[0],
       selectedTypeFlags: [true, false],
       types: types,
     );
+    return initialData;
   }
 
   void updateName(String name) {
-    state = state.copyWith(name: name);
+    if (state.hasValue) {
+      state = AsyncValue.data(state.value!.copyWith(name: name));
+    }
   }
 
   void updateMeaning(String meaning) {
-    state = state.copyWith(meaning: meaning);
+    if (state.hasValue) {
+      state = AsyncValue.data(state.value!.copyWith(meaning: meaning));
+    }
   }
 
   void updatePronunciation(String pronunciation) {
-    state = state.copyWith(pronunciation: pronunciation);
+    if (state.hasValue) {
+      state = AsyncValue.data(
+        state.value!.copyWith(pronunciation: pronunciation),
+      );
+    }
   }
 
   void updateExample(String example) {
-    state = state.copyWith(example: example);
+    if (state.hasValue) {
+      state = AsyncValue.data(state.value!.copyWith(example: example));
+    }
   }
 
   void updateSituation(String situation) {
-    state = state.copyWith(situation: situation);
+    if (state.hasValue) {
+      state = AsyncValue.data(state.value!.copyWith(situation: situation));
+    }
   }
 
   void updateSelectedType(int index) {
-    final selectedType = state.types[index];
-    final selectedTypeFlags = List.generate(
-      state.types.length,
-      (i) => i == index,
-    );
-    state = state.copyWith(
-      selectedType: selectedType,
-      selectedTypeFlags: selectedTypeFlags,
-    );
+    if (state.hasValue) {
+      final selectedType = state.value!.types[index];
+      final types = state.value!.types;
+      final selectedTypeFlags = List.generate(types.length, (i) => i == index);
+      state = AsyncValue.data(
+        state.value!.copyWith(
+          selectedType: selectedType,
+          selectedTypeFlags: selectedTypeFlags,
+        ),
+      );
+    }
   }
 
   void updateSelectedPos(String? selectedPos) {
-    state = state.copyWith(selectedPos: selectedPos);
+    if (state.hasValue) {
+      state = AsyncValue.data(state.value!.copyWith(selectedPos: selectedPos));
+    }
   }
 
   bool canRegister() {
-    return state.name.isNotEmpty;
+    // データがある場合のみnameのチェックを行う
+    return state.hasValue && state.value!.name.isNotEmpty;
   }
 
-  Future<void> registerMaterial() async {
-    final isar = await ref.read(isarProvider.future);
-    final vocabularys = isar.vocabularys;
-    await isar.writeTxn(() async {
-      await vocabularys.put(state.toVocabulary());
-    });
+  Future<bool> registerMaterial() async {
+    // stateをloadingにする前に、現在のデータを保持する
+    final currentData = state.value;
+    state = const AsyncValue.loading();
+    try {
+      final isar = await ref.read(isarProvider.future);
+      final vocabularys = isar.vocabularys;
+      await isar.writeTxn(() async {
+        await vocabularys.put(currentData!.toVocabulary());
+      });
+      ref.invalidateSelf();
+      ref.read(messageProvider.notifier).showMessage('登録成功');
+      return true;
+    } catch (e, stackTrace) {
+      state = AsyncValue.error(e, stackTrace);
+      ref.read(messageProvider.notifier).showMessage('登録失敗');
+      return false;
+    }
   }
 }
