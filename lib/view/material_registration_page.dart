@@ -93,6 +93,7 @@ class _MaterialRegistrationState
         title: Text(widget.title),
         centerTitle: true,
         actions: [
+          IconButton(onPressed: viewModelNotifier.generateTestData, icon: Icon(Icons.storage)),
           IconButton(icon: Icon(Icons.copy), onPressed: () {}),
           IconButton(icon: Icon(Icons.star), onPressed: () {}),
         ],
