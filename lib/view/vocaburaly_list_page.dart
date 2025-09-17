@@ -1,6 +1,9 @@
+import 'package:ezvocab/model/vocabulary.dart';
+import 'package:ezvocab/view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app_bottom_navigation_bar.dart';
+import '../view_model/vocabulary_list_view_model.dart';
 
 class VocabularyListPage extends ConsumerStatefulWidget {
   const VocabularyListPage({super.key, required this.title});
@@ -16,6 +19,8 @@ class _VocabularyListPageState extends ConsumerState<VocabularyListPage> {
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = ref.watch(vocabularyListViewModelProvider);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -50,7 +55,7 @@ class _VocabularyListPageState extends ConsumerState<VocabularyListPage> {
               color: Colors.black,
               fillColor: Colors.deepPurple[200],
               splashColor: Colors.deepPurple[100],
-              children: const <Widget>[
+              children: const [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text('未習得'),
@@ -68,20 +73,37 @@ class _VocabularyListPageState extends ConsumerState<VocabularyListPage> {
             const SizedBox(height: 16),
             // 語彙リスト
             Expanded(
-              child: ListView.builder(
-                itemCount: 10, // 実際のデータ数に合わせる
-                itemBuilder: (context, index) {
-                  return Card(
-                    margin: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: ListTile(
-                      title: const Text(
-                        'translate [発音]',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      subtitle: const Text('(動)翻訳する'),
-                    ),
+              child: viewModel.when(
+                data: (vocabularys) {
+                  // データが取得できた場合
+                  if (vocabularys.isEmpty) {
+                    return const Center(child: Text('語彙がありません。'));
+                  }
+                  return ListView.builder(
+                    itemCount: vocabularys.length,
+                    itemBuilder: (context, index) {
+                      final vocabulary = vocabularys[index];
+                      return Card(
+                        margin: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: ListTile(
+                          title: Text(
+                            '${vocabulary.name} ${vocabulary.meaning} [${vocabulary.pronunciation}]',
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Text('${vocabulary.pos}'),
+                        ),
+                      );
+                    },
                   );
                 },
+                loading: () => const Center(
+                  // データロード中のUI
+                  child: CircularProgressIndicator(),
+                ),
+                error: (error, stackTrace) => Center(
+                  // エラー発生時のUI
+                  child: Text('エラーが発生しました: $error'),
+                ),
               ),
             ),
           ],

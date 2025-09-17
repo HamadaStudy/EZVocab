@@ -7,7 +7,7 @@ part of 'material_registration_view_model.dart';
 // **************************************************************************
 
 String _$materialRegistrationViewModelHash() =>
-    r'ef0731a2fed64f73e73c596327b7cb8311e64ab5';
+    r'f34aa9d0c8668a5727f5347e81a351e6dde254d0';
 
 /// See also [MaterialRegistrationViewModel].
 @ProviderFor(MaterialRegistrationViewModel)

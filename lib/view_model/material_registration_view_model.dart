@@ -2,6 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../providers/isar_provider.dart';
 import '../providers/message_provider.dart';
 import '../model/vocabulary.dart';
+import '../utils/test_data_generator.dart';
 
 part 'material_registration_view_model.g.dart';
 
@@ -156,5 +157,16 @@ class MaterialRegistrationViewModel extends _$MaterialRegistrationViewModel {
       ref.read(messageProvider.notifier).showMessage('登録失敗');
       return false;
     }
+  }
+
+  Future<void> generateTestData() async {
+    final isar = await ref.read(isarProvider.future);
+    // 方法1: 既存データに追加
+    await VocabularyTestDataGenerator.insertTestData(isar);
+
+    // 方法2: 既存データを削除してからテストデータを登録
+    await VocabularyTestDataGenerator.resetWithTestData(isar);
+
+    // await isar.close();
   }
 }
