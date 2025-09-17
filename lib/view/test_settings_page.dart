@@ -32,7 +32,10 @@ class _TestSettingsPageState extends ConsumerState<TestSettingsPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // 出題範囲
-              const Text('出題範囲', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                '出題範囲',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               ToggleButtons(
                 isSelected: _isRangeSelected,
@@ -43,16 +46,33 @@ class _TestSettingsPageState extends ConsumerState<TestSettingsPage> {
                     }
                   });
                 },
+                borderRadius: BorderRadius.circular(8.0),
+                selectedColor: Colors.white,
+                color: Colors.black,
+                fillColor: Colors.deepPurple[200],
+                splashColor: Colors.deepPurple[100],
                 children: const [
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('おまかせ')),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('未習得')),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('苦手')),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('おまかせ'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('未習得'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('苦手'),
+                  ),
                 ],
               ),
-          
+
               // 種別
               const SizedBox(height: 24),
-              const Text('種別', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                '種別',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               ToggleButtons(
                 isSelected: _isTypeSelected,
@@ -63,16 +83,33 @@ class _TestSettingsPageState extends ConsumerState<TestSettingsPage> {
                     }
                   });
                 },
+                borderRadius: BorderRadius.circular(8.0),
+                selectedColor: Colors.white,
+                color: Colors.black,
+                fillColor: Colors.deepPurple[200],
+                splashColor: Colors.deepPurple[100],
                 children: const [
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('単語')),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('Idiom')),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('フレーズ')),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('単語'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('Idiom'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('フレーズ'),
+                  ),
                 ],
               ),
-          
+
               // 出題形式
               const SizedBox(height: 24),
-              const Text('出題形式', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                '出題形式',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               ToggleButtons(
                 isSelected: _isFormatSelected,
@@ -83,14 +120,31 @@ class _TestSettingsPageState extends ConsumerState<TestSettingsPage> {
                     }
                   });
                 },
+                borderRadius: BorderRadius.circular(8.0),
+                selectedColor: Colors.white,
+                color: Colors.black,
+                fillColor: Colors.deepPurple[200],
+                splashColor: Colors.deepPurple[100],
                 children: const [
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('カード')),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('和訳')),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('英訳')),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16), child: Text('聞き取り')),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('カード'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('和訳'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('英訳'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('聞き取り'),
+                  ),
                 ],
               ),
-              
+
               // スタートボタン
               const SizedBox(height: 32),
               Center(
@@ -102,7 +156,10 @@ class _TestSettingsPageState extends ConsumerState<TestSettingsPage> {
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.deepPurple[200],
-                    padding: const EdgeInsets.symmetric(horizontal: 64, vertical: 16),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 64,
+                      vertical: 16,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -114,7 +171,7 @@ class _TestSettingsPageState extends ConsumerState<TestSettingsPage> {
           ),
         ),
       ),
-      bottomNavigationBar: AppBottomNavigationBar()
+      bottomNavigationBar: AppBottomNavigationBar(),
     );
   }
 }
