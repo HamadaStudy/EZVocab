@@ -1,5 +1,5 @@
-import 'package:ezvocab/model/vocabulary.dart';
-import 'package:ezvocab/view_model/auth_view_model.dart';
+import '../model/vocabulary.dart';
+import '../view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app_bottom_navigation_bar.dart';
