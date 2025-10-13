@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class AppStyles {
   static const Color primaryColor = Color(0xFF296e48);
-  static const Color backgroundColor = Colors.white;
+  static const Color backgroundColor = Color.fromARGB(255, 207, 241, 219);
 
   static final headingTextStyle = TextStyle(
     fontSize: SizeConfig.getProportionateFontSize(36),

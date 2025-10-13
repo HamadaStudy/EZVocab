@@ -1,5 +1,5 @@
 import 'package:ezvocab/core/theme/app_styles.dart';
-import 'package:ezvocab/features/authentication/sign_in_screen.dart';
+import 'package:ezvocab/features/authentication/view/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
