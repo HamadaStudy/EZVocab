@@ -1,3 +1,4 @@
+import 'package:ezvocab/core/theme/app_pallete.dart';
 import 'package:ezvocab/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,7 @@ class CommonTextField extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0),
           borderSide: const BorderSide(
-            color: AppStyles.primaryColor,
+            color: Pallete.borderColor,
             width: 2.0,
           ),
         ),
@@ -44,7 +45,7 @@ class CommonTextField extends StatelessWidget {
           horizontal: 16.0,
         ),
       ),
-      cursorColor: AppStyles.primaryColor,
+      cursorColor: Pallete.primaryColor,
     );
   }
 }

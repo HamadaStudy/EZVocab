@@ -1,5 +1,6 @@
+import 'package:ezvocab/core/theme/app_pallete.dart';
 import 'package:ezvocab/core/theme/app_styles.dart';
-import 'package:ezvocab/features/authentication/view/sign_in_screen.dart';
+import 'package:ezvocab/features/authentication/view/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -49,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppStyles.backgroundColor,
+      backgroundColor: Pallete.backgroundColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
